@@ -1,0 +1,41 @@
+import Joi from "@hapi/joi";
+import { stringExtension } from "./extensions/string/string.extension";
+
+const extendedJoi = Joi.extend([stringExtension]);
+
+export default Object.assign(extendedJoi, {
+    when: Joi.when.bind(extendedJoi) as (typeof Joi)["when"],
+    defaults: Joi.defaults.bind(extendedJoi) as (typeof Joi)["defaults"],
+    describe: Joi.describe.bind(extendedJoi) as (typeof Joi)["describe"],
+    allow: Joi.allow.bind(extendedJoi) as (typeof Joi)["allow"],
+    valid: Joi.valid.bind(extendedJoi) as (typeof Joi)["valid"],
+    only: Joi.only.bind(extendedJoi) as (typeof Joi)["only"],
+    equal: Joi.equal.bind(extendedJoi) as (typeof Joi)["equal"],
+    invalid: Joi.invalid.bind(extendedJoi) as (typeof Joi)["invalid"],
+    disallow: Joi.disallow.bind(extendedJoi) as (typeof Joi)["disallow"],
+    not: Joi.not.bind(extendedJoi) as (typeof Joi)["not"],
+    required: Joi.required.bind(extendedJoi) as (typeof Joi)["required"],
+    exist: Joi.exist.bind(extendedJoi) as (typeof Joi)["exist"],
+    optional: Joi.optional.bind(extendedJoi) as (typeof Joi)["optional"],
+    forbidden: Joi.forbidden.bind(extendedJoi) as (typeof Joi)["forbidden"],
+    strip: Joi.strip.bind(extendedJoi) as (typeof Joi)["strip"],
+    description: Joi.description.bind(extendedJoi) as (typeof Joi)["description"],
+    notes: Joi.notes.bind(extendedJoi) as (typeof Joi)["notes"],
+    tags: Joi.tags.bind(extendedJoi) as (typeof Joi)["tags"],
+    meta: Joi.meta.bind(extendedJoi) as (typeof Joi)["meta"],
+    example: Joi.example.bind(extendedJoi) as (typeof Joi)["example"],
+    unit: Joi.unit.bind(extendedJoi) as (typeof Joi)["unit"],
+    options: Joi.options.bind(extendedJoi) as (typeof Joi)["options"],
+    strict: Joi.strict.bind(extendedJoi) as (typeof Joi)["strict"],
+    concat: Joi.concat.bind(extendedJoi) as (typeof Joi)["concat"],
+    label: Joi.label.bind(extendedJoi) as (typeof Joi)["label"],
+    raw: Joi.raw.bind(extendedJoi) as (typeof Joi)["raw"],
+    empty: Joi.empty.bind(extendedJoi) as (typeof Joi)["empty"],
+    validate: Joi.validate.bind(extendedJoi) as (typeof Joi)["validate"],
+    compile: Joi.compile.bind(extendedJoi) as (typeof Joi)["compile"],
+    assert: Joi.assert.bind(extendedJoi) as (typeof Joi)["assert"],
+    attempt: Joi.attempt.bind(extendedJoi) as (typeof Joi)["attempt"],
+    ref: Joi.ref.bind(extendedJoi) as (typeof Joi)["ref"],
+    isRef: Joi.isRef.bind(extendedJoi) as (typeof Joi)["isRef"],
+    reach: Joi.reach.bind(extendedJoi) as (typeof Joi)["reach"],
+});

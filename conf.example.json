@@ -1,0 +1,8 @@
+{
+    "triathlonOrgAPI": {
+        "baseUrl": "https://api.triathlon.org/v1",
+        "apiKey": "2649776ef9ece4c391003b521cbfce7a"
+    },
+    "port": 8081,
+    "debug": true
+}
